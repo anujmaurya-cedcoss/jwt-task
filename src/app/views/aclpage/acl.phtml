@@ -1,0 +1,42 @@
+<?php
+include_once(APP_PATH . '/views/header.php');
+?>
+<h2>Access Control Page</h2>
+<!-- role section -->
+<?php echo $this->tag->form("aclpage/acl"); ?>
+<p>
+    <label for="role" >Choose a role:</label>
+    <select name="role" id="role">
+        <?php
+        $str = '';
+        foreach ($this->session->roles as $value) {
+            $str .= "<option value = '$value'> $value </option>";
+        }
+        echo $str;
+        ?>
+    </select>
+</p>
+<!-- controller section -->
+<p>
+    <label for="controller">Choose Controller:</label>
+    <select name="controller" id="controller">
+        <?php
+        $str = '';
+        foreach ($this->session->controllerList as $key => $value) {
+            $str .= "<option value = '$key'> $key </option>";
+        }
+        echo $str;
+        ?>
+    </select>
+</p>
+<!-- choose action -->
+<p>
+    <label for="action">Choose Action:</label>
+    <select name="action" id="action">
+        <?php //echo $this->session->currActions ?>
+    </select>
+</p>
+<p>
+    <?php echo $this->tag->submitButton("Set Access"); ?>
+</p>
+</form>

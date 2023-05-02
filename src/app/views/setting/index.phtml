@@ -1,0 +1,28 @@
+<?php include_once(APP_PATH . '/views/header.php');
+session_start();
+?>
+<h2>Settings</h2>
+<?php echo $this->tag->form("setting/add?bearer=" . $_SESSION['currUser']); ?>
+<p>
+    <label for="title">Title Optimization</label>
+    <select name="title" id="title">
+        <option value="with-tag">With Tags</option>
+        <option value="without-tag">Without Tags</option>
+    </select>
+</p>
+<p>
+    <label for="default-price">Default Price</label>
+    <?php echo $this->tag->textField("defaultPrice"); ?>
+</p>
+<p>
+    <label for="default-stock">Default Stock</label>
+    <?php echo $this->tag->textField("defaultStock"); ?>
+</p>
+<p>
+    <label for="default-zip">Default Zip</label>
+    <?php echo $this->tag->textField("defaultZip"); ?>
+</p>
+<p>
+    <?php echo $this->tag->submitButton("Save Settings"); ?>
+</p>
+</form>

@@ -1,0 +1,27 @@
+<h2>Sign Up first !</h2>
+<?php echo $this->tag->form(["signup", 'class' => '']); ?>
+<p>
+    <label for="name">Name</label>
+    <?php echo $this->tag->textField("name"); ?>
+</p>
+<p>
+    <label for="email">email</label>
+    <?php echo $this->tag->textField("email"); ?>
+</p>
+<p>
+    <label for="password">Password</label>
+    <?php echo $this->tag->textField("password"); ?>
+</p>
+<p>
+    <!-- product dropdown -->
+    <label for="role">Choose the role : </label>
+    <select name="role" id="role">
+        <option value="user">User</option>
+        <option value="admin">Admin</option>
+        <option value="manager">Manager</option>
+    </select>
+</p>
+<p>
+    <?php echo $this->tag->submitButton("Sign Up");?>
+</p>
+</form>

@@ -1,0 +1,30 @@
+<?php
+    include(APP_PATH.'/views/header.php');
+?>
+<h2>Add New Order</h2>
+<?php echo $this->tag->form(["order/add", 'class' => 'form-group']); ?>
+<p>
+    <label for="customerName">Customer Name</label>
+    <?php echo $this->tag->textField("customerName"); ?>
+</p>
+<p>
+    <label for="customerAddress">Customer address</label>
+    <?php echo $this->tag->textArea("customerAddress"); ?>
+</p>
+<p>
+    <label for="zip">Zip Code</label>
+    <?php echo $this->tag->textField("zip"); ?>
+</p>
+<p>
+    <!-- product dropdown -->
+    <label for="product"></label>
+    <?php echo $dropdown ?>
+</p>
+<p>
+    <label for="quantity">Quantity</label>
+    <?php echo $this->tag->textField("quantity"); ?>
+</p>
+<p>
+    <?php echo $this->tag->submitButton("Place Order");?>
+</p>
+</form>

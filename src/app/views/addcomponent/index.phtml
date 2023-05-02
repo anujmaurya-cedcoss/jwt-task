@@ -1,0 +1,17 @@
+<?php include(APP_PATH . '/views/header.php');
+session_start();
+?>
+<h2>Add Component</h2>
+<?php echo $this->tag->form("addcomponent/add?bearer=".$_SESSION['currUser']); ?>
+<p>
+    <label for="controller">Controller</label>
+    <?php echo $this->tag->textField("controller"); ?>
+</p>
+<p>
+    <label for="action">Action</label>
+    <?php echo $this->tag->textField("action"); ?>
+</p>
+<p>
+    <?php echo $this->tag->submitButton("Add Component"); ?>
+</p>
+</form>
